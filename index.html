@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda-Luna</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="text-center" onload="cargarProductos();">
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-info">
+          <div class="container-fluid text-center">
+
+            <img src="logo.jpg" alt="" width="40" height="40">
+            <h1 class="navbar-brand m-auto text-dark">Tienda-Luna</h1>
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#agregarProductos" onclick="verProductos()">
+                ADD
+              </button>
+
+          </div>
+        </nav>
+      </div><br><br>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid w-80 m-auto">
+            <table> 
+                <tr>
+                    <td><h2>PRODUCTO</h2></td>
+                    <td><h2>IMAGEN</h2></td>
+                    <td><h2>PRECIO</h2></td>
+                    <td><h2>CANTIDAD</h2></td>
+                    <td><h2>AGREGAR</h2></td>
+                </tr>
+        
+                <tr> 
+                    <td><label>PRODUCTO</label><select name="producto" id="productos" class="form-control"></select></td>
+        
+                    <td><img src="logo.jpg" alt="" height="80px" id="imgProductos"></td>
+        
+                    <td><h1 id="precioProducto">$0</h1></td>
+        
+                    <td><h1 id="vcantidad">1</h1><input type="range" name="cantidad" id="inputCantidad" min="1" max="10" value="1" class="form-control w-50 m-auto"></td>
+        
+                    <td><button class="btn btn-success" id="agregarCarrito"><i class="bi bi-plus-circle"></i> Agregar</button></td>
+                </tr>
+              </table>
+        
+              
+          </div>
+        </nav>
+      </div>
+      <center><div id="carrito"></div></center>
+
+
+
+  
+  <div class="modal fade" id="agregarProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR PRODUCTOS</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <table class="table table-striped">
+                <tr>
+                    <td>Producto: <input type="text" id="nombre" class="form-control"></td>
+
+                    <td>Precio: <input type="number" id="precioP" class="form-control"></td>
+
+                    <td><button class="btn btn-success" onclick="addProductos()">Agregar</button></td>
+                </tr>
+            </table>
+
+            <h2>Lista de Productos Disponibles</h2>
+            <div id="listaProductos"></div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+      <script src="bootstrap.bundle.min.js"></script>
+      <script src="sweetalert2@11.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
